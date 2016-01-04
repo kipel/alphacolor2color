@@ -59,6 +59,7 @@ function hexToInt(num) {
 }
 
 function alphaToColor() {
+    hideError();
     var colors = $("#input-colors").val().split("\n");
     var alpha = parseFloat($("#alpha").val());
     if (alpha < 0.0 || alpha > 1.0) {
@@ -85,6 +86,11 @@ function alphaToColor() {
     $("#output-color").val(output);
 }
 
+function hideError(e) {
+    $("#error-prompt").css('display', 'none');
+}
+
 function promptError(e) {
     $("#error-prompt").text(e);
+    $("#error-prompt").css('display', 'block');
 }
